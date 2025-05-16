@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<views:ContentPageBase
+        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="ProductCatalog.Admin.Mobile.Views.ProductOverviewPage"
+        xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+        xmlns:views="clr-namespace:ProductCatalog.Admin.Mobile.Views"
+        xmlns:converters="clr-namespace:ProductCatalog.Admin.Mobile.Converters"
+        Title="ProductOverviewPage">
+
+    <ContentPage.Resources>
+        <converters:StarColorConverter x:Key="StarColorConverter" />
+        <converters:StarIconConverter x:Key="StarIconConverter" />
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <ScrollView>
+            <Grid>
+                <StackLayout>
+                    <CollectionView 
+                        ItemsSource="{Binding Products}"
+                        SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+                        SelectionMode="Single"
+                        SelectionChangedCommand="{Binding NavigateToSelectedDetailCommand}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Padding="10" ColumnDefinitions="Auto, *" ColumnSpacing="10">
+                                    <Image 
+                                        Aspect="AspectFill"
+                                        Source="{Binding Image, TargetNullValue=fallback.jpg}"
+                                        WidthRequest="100"
+                                        HeightRequest="100"
+                                        VerticalOptions="Center" />
+
+                                                            <VerticalStackLayout Grid.Column="1" Spacing="4" VerticalOptions="Center">
+                                                                <Label 
+                                            Style="{StaticResource ValueLabelStyle}"
+                                            Text="{Binding Name}" />
+                                                                <Label Text="{Binding Title}" />
+                                                                <Label Text="{Binding Price, StringFormat='{0:C}'}" />
+                                                                <Label Text="{Binding Category}" />
+                                                            <Label 
+                                            Text="{Binding Description}" 
+                                            LineBreakMode="TailTruncation"
+                                            MaxLines="2" />
+                                        <Label
+                                            Text="{Binding Favorite, Converter={StaticResource StarIconConverter}}"
+                                            TextColor="{Binding Favorite, Converter={StaticResource StarColorConverter}}"
+                                            FontSize="20"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="Start" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+        
+        <!-- Indicador de carregamento -->
+        <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" 
+              IsVisible="{Binding IsLoading}">
+            <ActivityIndicator IsRunning="{Binding IsLoading}" />
+        </Grid>
+    </Grid>
+</views:ContentPageBase>

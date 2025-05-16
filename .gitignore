@@ -1,0 +1,122 @@
+# .NET MAUI .gitignore
+
+# Build and output directories
+[Bb]in/
+[Oo]bj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.userosscache
+*.sln.docstates
+
+# IDE and tool files
+.vs/
+.idea/
+*.swp
+*.swo
+
+# NuGet Packages
+*.nupkg
+packages/
+
+# Local NuGet cache
+.nuget/
+nuget.exe
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options directory
+.vs/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUnit, XUnit, etc.
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Build Results of an ATL Project
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# MAUI specific
+**/Resources/Raw/**/*.xml
+**/wwwroot/*
+!**/wwwroot/.gitkeep
+
+# Android specific
+*.apk
+*.aab
+*.keystore
+*.ap_
+*.aab
+
+# iOS specific
+*.ipa
+*.dll.meta
+*.pdb.meta
+*.dSYM/
+*.plist
+**/BundleArtifacts/
+**/Intermediate/
+
+# macOS specific
+.DS_Store
+._*
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Rider specific
+.idea/
+*.sln.iml
+
+# CodeRush
+.cr/
+
+# Python
+__pycache__/
+*.pyc
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Local History
+.history/
+
+# Backup files
+*.bak
+*.tmp
+*.temp
+
+# JetBrains Rider
+.idea/
+*.sln.iml
