@@ -41,10 +41,13 @@ Este projeto é um aplicativo de catálogo de produtos, desenvolvido com .NET MA
 🔧 Detalhes Técnicos
 
 - A API utilizada: https://fakestoreapi.com
-- Políticas de Retry com `RetryHelper` e `HttpClient`
-- MVVM com CommunityToolkit.Mvvm
+- Arquitetura MVVM: com CommunityToolkit.Mvvm (v8.2.2)
+- UI & Funcionalidades: com .NET MAUI Community Toolkit (CommunityToolkit.Maui v7.0.1)
+- Testes Unitários: com Moq (v4.20.72)
+- MAUI Controls: baseados no .NET MAUI 8 (Microsoft.Maui.Controls v8.0.100)
 - Navegação com `INavigationService`
 - Favoritos são persistidos com `Preferences`
+- Políticas de Retry com `RetryHelper` e `HttpClient`
 
 📌 Observações
 
