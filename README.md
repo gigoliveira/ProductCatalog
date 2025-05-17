@@ -18,14 +18,12 @@ Este projeto é um aplicativo de catálogo de produtos, desenvolvido com .NET MA
    git clone https://github.com/gigoliveira/ProductCatalog.git
    cd ProductCatalog
 
-2. Restaure os pacotes:
+✅ Primeiro Build no Visual Studio
 
-   dotnet restore
-
-3. Execute o projeto:
-
-   dotnet build
-   dotnet run --project ProductCatalog.Admin.Mobile
+- Abra o `.sln` no Visual Studio
+- Selecione o projeto `ProductCatalog.Admin.Mobile` como inicial
+- Escolha `Android Emulator` como target
+- Pressione `F5` para rodar
 
 📁 Estrutura do Projeto
 
@@ -48,17 +46,9 @@ Este projeto é um aplicativo de catálogo de produtos, desenvolvido com .NET MA
 - Navegação com `INavigationService`
 - Favoritos são persistidos com `Preferences`
 
-✅ Primeiro Build no Visual Studio
-
-- Abra o `.sln` no Visual Studio
-- Selecione o projeto `ProductCatalog.Admin.Mobile` como inicial
-- Escolha `Windows Machine` como target
-- Pressione `F5` para rodar
-
 📌 Observações
 
 - O projeto suporta comunicação entre viewmodels via mensagens.
-- É possível simular favoritar produtos offline.
 - Todos os estilos e fontes estão no diretório `Resources/`.
 
 📬 Contato
